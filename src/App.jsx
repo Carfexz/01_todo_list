@@ -1,11 +1,11 @@
 import './styles/fonts.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import About from './pages/About'
-import Error from './pages/Error'
-import Login from './pages/Login'
-import PostPage from './pages/PostPage'
-import Posts from './pages/Posts'
-import Layout from './components/Layout'
+import About from './components/pages/About'
+import Error from './components/pages/Error'
+import Login from './components/pages/Login'
+import PostPage from './components/pages/PostPage'
+import Posts from './components/pages/Posts'
+import Layout from './components/helpers/Layout'
 
 function App() {
 

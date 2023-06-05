@@ -1,10 +1,6 @@
 .button {
-  box-sizing: border-box;
-
-  width: 90px;
+  /* Оставлять только heght для адаптивной вёрстки */
   height: 35px;
-  left: 115px;
-  top: 305px;
 
   background: var(--color-green);
   border: 1px solid #ffffff;
