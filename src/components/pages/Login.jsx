@@ -1,8 +1,11 @@
+import Layout from "./Layout/Layout";
+import LoginWidget from '../widgets/Login/Login'
+
 const Login = () => {
     return (
-        <div>
-
-        </div>
+        <Layout isHeader={true} isFooter={true}>
+            <LoginWidget />
+        </Layout>
     )
 }
 
