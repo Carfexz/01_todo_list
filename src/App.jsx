@@ -1,3 +1,4 @@
+import Input from './components/ui/Input/Input';
 import './styles/fonts.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import About from './components/pages/About'

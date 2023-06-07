@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
+import Input from '../ui/Input/Input';
 
 const Layout = () => {
     return (
@@ -7,10 +8,7 @@ const Layout = () => {
                 <Link to='/login'>Login</Link>
                 <Link to='/about'>About</Link>
             </header>
-
             <Outlet />
-
-            <footer>2023</footer>
         </>
     )
 }
