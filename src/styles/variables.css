@@ -4,6 +4,7 @@
   --gap: 4px;
   --max-page-width: 1120px;
   --min-page-width: 320px;
+  --ui-min-height: 40px;
 }
 
 :root {

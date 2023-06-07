@@ -1,7 +1,6 @@
 .button {
   padding: 0 calc(var(--gap) * 3);
-  height: 35px;
-  width: 100px;
+  height: var(--ui-height);
 
   background: rgba(93, 155, 155, 0.7);
   border: 1px solid #ffffff;

@@ -6,9 +6,9 @@ import './Login.css'
 const Login = () => {
     return (
         <LoginWindow>
-            <Input />
-            <Input />
-            <Button />
+            {/* <Input /> */}
+            {/* <Input /> */}
+            <Button text={'FISTING ASS'} onClick={() => console.log('FUCKING DEEP')} />
         </LoginWindow>
     )
 }
