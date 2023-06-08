@@ -1,0 +1,19 @@
+.text-style {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  color: #000;
+  padding: 6px;
+}
+
+.button {
+  justify-content: center;
+  font-family: "Poppins";
+  color: #fff;
+  font-size: 16px;
+}
+
+.padding-button {
+  padding: 8px;
+}

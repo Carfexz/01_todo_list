@@ -6,9 +6,16 @@ import './Login.css'
 const Login = () => {
     return (
         <LoginWindow>
-            {/* <Input /> */}
-            {/* <Input /> */}
-            <Button text={'FISTING ASS'} onClick={() => console.log('FUCKING DEEP')} />
+            <div className='text-style'>
+                E-Mail
+            </div>
+            <Input placeholder={'E-Mail'} />
+            <div className='text-style'>
+                Password
+            </div>
+            <Input placeholder={'Password'} />
+            <div className='padding-button' />
+            <Button text={'Log in'} />
         </LoginWindow>
     )
 }

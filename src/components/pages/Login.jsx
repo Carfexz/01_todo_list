@@ -3,7 +3,7 @@ import LoginWidget from '../widgets/Login/Login'
 
 const Login = () => {
     return (
-        <Layout isHeader={true} isFooter={true}>
+        <Layout isHeader={false} isFooter={false}>
             <LoginWidget />
         </Layout>
     )

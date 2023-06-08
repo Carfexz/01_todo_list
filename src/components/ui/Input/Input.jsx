@@ -1,8 +1,9 @@
 import './Input.css'
 
-const Input = () => {
+const Input = ({ text }) => {
     return (
         <div className='input'>
+            {text}
         </div>
     )
 }
