@@ -1,3 +1,7 @@
 body {
   background: var(--url);
 }
+
+.padding-2-gap {
+  padding: calc(var(--gap) * 2);
+}

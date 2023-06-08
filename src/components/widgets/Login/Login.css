@@ -1,0 +1,10 @@
+.button {
+  justify-content: center;
+  font-family: "Poppins";
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-input {
+  height: 32px;
+}

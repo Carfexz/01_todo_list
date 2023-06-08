@@ -1,9 +1,14 @@
 .input {
   padding: 0 calc(var(--gap) * 3);
   height: var(--ui-height);
+}
 
-  background: rgba(87, 87, 87, 0.7);
-  border: 1px solid #ffffff;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
+.input-textfield {
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-normal);
+  color: #fff;
 }
