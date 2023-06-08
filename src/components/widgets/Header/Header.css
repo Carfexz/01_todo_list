@@ -1,4 +1,7 @@
 .main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 15px 25px;
   width: 100%;
   font-family: "Poppins";
 }

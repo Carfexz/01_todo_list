@@ -1,9 +1,10 @@
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ text = '+' }) => {
     return (
         <div className="main-footer">
-            footer
+            <div className='circle-btn'>{text}</div>
+
         </div>
     )
 }
