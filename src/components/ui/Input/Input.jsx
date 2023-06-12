@@ -1,9 +1,10 @@
 import './Input.css'
 
-const Input = ({ text, className = '', type }) => {
+const Input = ({ value, className = '', type, onChange }) => {
+
     return (
         <div className={`input ${className}`} >
-            <input value={text} className='input-textfield' type={type} />
+            <input onChange={onChange} autoComplete="new-password" value={value} className='input-textfield' type={type} />
         </div>
     )
 }
