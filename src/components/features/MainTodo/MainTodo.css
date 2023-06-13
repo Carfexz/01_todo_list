@@ -1,9 +1,0 @@
-.main-todo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  max-width: var(--max-page-width);
-  min-width: var(--min-page-width);
-  font-family: "Poppins";
-}

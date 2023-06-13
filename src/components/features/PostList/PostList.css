@@ -1,0 +1,7 @@
+.todo-title {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+
+  font-family: "Poppins";
+}

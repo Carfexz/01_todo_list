@@ -1,0 +1,22 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--max-page-width);
+  min-width: var(--min-page-width);
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Poppins";
+  padding-bottom: 10px;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(87, 87, 87);
+  border-radius: 5px;
+}

@@ -1,2 +1,7 @@
 .modal-content {
+  padding-top: 15px;
+}
+
+.padding-button-modal {
+  padding: 10px;
 }

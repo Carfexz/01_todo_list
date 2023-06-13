@@ -10,7 +10,7 @@
   --gap: 4px;
   --page-edge-padding: calc(var(--gap) * 2);
 
-  --max-page-width: 640px;
+  --max-page-width: 600px;
   --min-page-width: 320px;
   --ui-height: 40px;
 }
