@@ -20,3 +20,10 @@
   border: 1px solid rgba(87, 87, 87);
   border-radius: 5px;
 }
+
+.gr-close {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}

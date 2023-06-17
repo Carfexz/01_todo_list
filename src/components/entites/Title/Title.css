@@ -3,7 +3,7 @@
   justify-content: center;
   font-family: "Poppins";
   font-size: var(--font-size-big);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-black);
   padding: calc(var(--gap) * 2);
 }

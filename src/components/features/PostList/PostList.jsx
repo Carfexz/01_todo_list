@@ -1,15 +1,14 @@
 import PostItem from '../../entites/PostItem/PostItem'
+import Title from '../../entites/Title/Title';
 import './PostList.css'
 
-const PostList = ({ posts, title }) => {
+const PostList = ({ posts, title, remove }) => {
 
     return (
         <div>
-            <h1 className='todo-title'>
-                {title}
-            </h1>
-            {posts.map(post =>
-                <PostItem post={post} key={post.id} />
+            <Title text={title} />
+            {posts.map((post, index) =>
+                <PostItem remove={remove} number={index + 1} post={post} key={post.id} />
             )}
         </div>
     )
