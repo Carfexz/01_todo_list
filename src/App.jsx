@@ -1,5 +1,3 @@
-import Input from './components/ui/Input/Input';
-import './styles/fonts.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import About from './components/pages/About'
 import Error from './components/pages/Error'
@@ -8,8 +6,9 @@ import PostPage from './components/pages/PostPage'
 import Posts from './components/pages/Posts'
 import Layout from './components/helpers/Layout'
 
-function App() {
+import './styles/fonts.css'
 
+function App() {
   return (
     <BrowserRouter>
       <Routes>

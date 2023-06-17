@@ -1,8 +1,9 @@
-import { useState } from "react";
+import Layout from "./Layout/Layout";
+import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
 import PostList from "../features/PostList/PostList";
 import Title from '../entites/Title/Title'
-import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
-import Layout from "./Layout/Layout";
+
+import { useState } from "react";
 
 const Posts = () => {
 
@@ -11,7 +12,6 @@ const Posts = () => {
         { id: 2, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days' },
         { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days' }
     ])
-
 
     const addNewPost = ({ title, body }) => {
         const newPost = {
@@ -22,17 +22,11 @@ const Posts = () => {
         setPosts([...posts, newPost])
     }
 
-    const removePost = (post) => {
-        setPosts(posts.filter(p => p.id !== post.id))
+    const removePost = ({ id }) => {
+        setPosts([...posts].filter(p => p.id !== id))
     }
 
-
-
-    const [showModal, setShowModal] = useState(true)
-
-    const setShowModalHandler = (boolean) => {
-        setShowModal(boolean)
-    }
+    const [showModal, setShowModal] = useState(false)
 
     const closeModal = () => {
         setShowModal(false)
@@ -41,7 +35,6 @@ const Posts = () => {
     const openModal = () => {
         setShowModal(true)
     }
-
 
     return (
         <Layout isFooter={true} isHeader={true} openModal={openModal}>
@@ -56,4 +49,3 @@ const Posts = () => {
 
 export default Posts;
 
-{/* <PostList title="POSTS NOT FOUND | ૮ ˙Ⱉ˙ ა rawr!" posts={posts} /> */ }

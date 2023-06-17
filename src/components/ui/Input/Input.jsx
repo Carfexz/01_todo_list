@@ -1,7 +1,6 @@
 import './Input.css'
 
 const Input = ({ value, className = '', type, onChange, onClick, placeholder, text }) => {
-
     return (
         <div className={`input ${className}`} >
             <input
@@ -12,7 +11,6 @@ const Input = ({ value, className = '', type, onChange, onClick, placeholder, te
                 onClick={onClick}
                 placeholder={placeholder}
             />
-
         </div>
     )
 }

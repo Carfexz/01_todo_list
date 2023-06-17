@@ -1,5 +1,4 @@
 import { Link, Outlet } from 'react-router-dom'
-import Input from '../ui/Input/Input';
 
 const Layout = () => {
     return (

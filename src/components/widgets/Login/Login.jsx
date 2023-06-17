@@ -1,11 +1,13 @@
-import Button from '../../ui/Button/Button';
 import LoginWindow from '../../entites/LoginWindow/LoginWindow';
-import Input from '../../ui/Input/Input';
 import Title from '../../entites/Title/Title'
-import './Login.css'
 import Container from '../../entites/Container/Container';
-import { useInput } from '../../ui/Input/useInput';
 import Modal from '../../entites/Modal/Modal';
+import Button from '../../ui/Button/Button';
+import Input from '../../ui/Input/Input';
+
+import { useInput } from '../../ui/Input/useInput';
+
+import './Login.css'
 
 
 const Login = () => {

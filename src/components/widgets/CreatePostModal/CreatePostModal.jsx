@@ -1,13 +1,14 @@
-import { useState } from "react"
 import Backdrop from "../../entites/Backdrop/Backdrop"
 import Container from '../../entites/Container/Container'
 import Modal from "../../entites/Modal/Modal"
 import Button from "../../ui/Button/Button"
 import Input from "../../ui/Input/Input"
 import { useInput } from "../../ui/Input/useInput"
+
 import './CreatePostModal.css'
 
 const CreatePostModal = ({ closeModal, addNewPost }) => {
+
     const title = useInput(['', ''])
     const body = useInput(['', ''])
 
@@ -41,10 +42,3 @@ const CreatePostModal = ({ closeModal, addNewPost }) => {
 }
 
 export default CreatePostModal
-
-
-
-const obj = {
-    a: 10,
-    b: 20,
-}
