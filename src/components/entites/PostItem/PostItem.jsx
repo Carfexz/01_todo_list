@@ -1,8 +1,6 @@
 import { GrClose } from "react-icons/gr";
 import './PostItem.css'
 
-
-
 const PostItem = ({ remove, post, number }) => {
     const { title, body } = post;
     const removeHandler = () => remove(post);

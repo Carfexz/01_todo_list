@@ -5,7 +5,6 @@ import Login from './components/pages/Login'
 import PostPage from './components/pages/PostPage'
 import Posts from './components/pages/Posts'
 import Layout from './components/helpers/Layout'
-
 import './styles/fonts.css'
 
 function App() {

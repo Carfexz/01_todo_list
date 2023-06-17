@@ -2,7 +2,6 @@ import Layout from "./Layout/Layout";
 import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
 import PostList from "../features/PostList/PostList";
 import Title from '../entites/Title/Title'
-
 import { useState } from "react";
 
 const Posts = () => {
