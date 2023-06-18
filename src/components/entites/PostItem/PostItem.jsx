@@ -16,7 +16,6 @@ const PostItem = ({ remove, post, number }) => {
                     {body}
                 </div>
             </div>
-
         </div>
     )
 }

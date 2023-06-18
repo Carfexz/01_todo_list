@@ -10,7 +10,6 @@ import './Login.css'
 const Login = () => {
 
     const password = useInput(['', ''])
-
     const email = useInput(['', ''])
 
     return (

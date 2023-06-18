@@ -10,5 +10,5 @@
   border: none;
   outline: none;
   font-size: var(--font-size-normal);
-  color: #fff;
+  color: var(--color-white);
 }

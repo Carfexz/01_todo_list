@@ -1,7 +1,7 @@
 .container {
-  background: rgba(87, 87, 87, 0.7);
-  border: 1px solid #ffffff;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
+  background: var(--color-light-grey3);
+  border: var(--color-border);
+  box-shadow: var(--color-light-grey2);
+  border-radius: calc(var(--gap) * 10);
   padding: calc(var(--gap) * 1);
 }

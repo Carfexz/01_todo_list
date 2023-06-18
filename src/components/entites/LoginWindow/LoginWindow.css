@@ -1,7 +1,7 @@
-.contLog {
+.container-login {
   display: flex;
   flex-direction: column;
-  padding-top: 160px;
+  padding-top: 25vh;
   justify-content: center;
   align-items: center;
 }

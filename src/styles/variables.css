@@ -1,13 +1,20 @@
 :root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-border: 1px solid #fff;
+  --color-border-posts: 1px solid #000;
+  --color-light-grey1: rgba(87, 87, 87, 0.7);
+  --color-light-grey2: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --color-light-grey3: rgba(0, 0, 0, 0.4);
   --color-green: #5d9b9b;
   --color-blue: #7fc7ff;
-  --color-black: #000;
+  --color-bg-post: rgba(255, 255, 255, 0.85);
 
   --font-size-big: 25px;
   --font-size-normal: 14px;
   --font-size-small: 12px;
 
-  --gap: 4px;
+  --gap: 5px;
   --page-edge-padding: calc(var(--gap) * 2);
 
   --max-page-width: 600px;
