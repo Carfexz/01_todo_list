@@ -17,7 +17,8 @@ const PostItem = ({ remove, post, number }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
                     className='gr-close'>
-                    <GrClose onClick={removeHandler} />
+                    <GrClose
+                        onClick={removeHandler} />
                 </motion.div>
                 <div className='post-content'>
                     <strong>{number}. {title}</strong>
