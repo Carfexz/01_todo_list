@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { inputAnimations } from '../../../const/animations/items';
 import './Input.css'
 
 
@@ -6,8 +7,7 @@ const Input = ({ value, className = '', type, onChange, onClick, placeholder, te
     return (
         <div className={`input ${className}`} >
             <motion.input
-                whileHover={{ scale: 1.015 }}
-                whileTap={{ scale: 1 }}
+                {...inputAnimations}
                 onChange={onChange}
                 autoComplete="new-password"
                 value={value} className='input-textfield'

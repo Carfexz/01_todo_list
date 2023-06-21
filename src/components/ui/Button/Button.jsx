@@ -4,28 +4,28 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { TfiAlignRight } from "react-icons/tfi";
 import { TfiClose } from "react-icons/tfi";
 import { TfiUser } from "react-icons/tfi";
+import { buttonAnimations } from '../../../const/animations/items';
 import './Button.css'
 
 
 const Button = ({ text, onClick, isCircle, isCross, isEdit, isUser, isBurger, crossIcon = false, editIcon = false, userIcon = false, burgerIcon = false }) => {
     return (
         <motion.div
-            whileHover={{ scale: 1.010 }}
-            whileTap={{ scale: 0.95 }}
+            {...buttonAnimations}
         >
             <button onClick={onClick} text={text} className={
                 `button
                  ${isCircle ? 'circle' : 'button'}
-                 ${isCross ? 'cross' : 'button'}
-                 ${isEdit ? 'edit' : 'button'}
-                 ${isUser ? 'user' : 'button'}
-                 ${isBurger ? 'burger' : 'button'}`}
+                 ${isCross ? 'icon' : 'button'}
+                 ${isEdit ? 'icon' : 'button'}
+                 ${isUser ? 'icon' : 'button'}
+                 ${isBurger ? 'icon' : 'button'}`}
             >
                 {text}
-                {crossIcon && <AiFillCloseCircle className='cross' />}
-                {editIcon && <AiOutlineEdit className='edit' />}
-                {userIcon && <TfiUser className='user' />}
-                {burgerIcon && <TfiAlignRight className='burger' />}
+                {crossIcon && <AiFillCloseCircle className='icon' />}
+                {editIcon && <AiOutlineEdit className='icon' />}
+                {userIcon && <TfiUser className='icon' />}
+                {burgerIcon && <TfiAlignRight className='icon' />}
             </button>
         </motion.div >
     )

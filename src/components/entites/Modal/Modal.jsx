@@ -1,7 +1,8 @@
 import { GrClose } from "react-icons/gr";
+import { stopPropagation } from "../../../utils";
 import './Modal.css'
 
-const stopPropagation = (event) => event.stopPropagation();
+
 
 const Modal = ({ children, onClose, isGrClose = true }) => {
     return (

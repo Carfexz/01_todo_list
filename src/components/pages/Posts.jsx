@@ -4,6 +4,7 @@ import PostList from "../features/PostList/PostList";
 import Title from '../entites/Title/Title'
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { animationAscent } from "../../const/animations/items";
 
 const Posts = () => {
 
@@ -42,9 +43,7 @@ const Posts = () => {
             {posts.length !== 0
                 ? <PostList remove={removePost} posts={posts} title='TO-DO LIST' />
                 : <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.1 }}
+                    {...animationAscent}
                 >
                     <Title text='POSTS NOT FOUND | ૮ ˙Ⱉ˙ ა rawr!' />
                 </motion.div>

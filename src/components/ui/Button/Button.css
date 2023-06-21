@@ -30,30 +30,8 @@
   box-shadow: var(--color-light-grey1);
 }
 
-.button.cross {
+.button.icon {
   background-color: inherit;
+  font-size: calc(var(--gap) * 4);
   color: var(--color-black);
-  width: calc(var(--gap) * 3);
-  height: calc(var(--gap) * 3);
-}
-
-.button.edit {
-  background-color: inherit;
-  color: var(--color-black);
-  width: calc(var(--gap) * 3);
-  height: calc(var(--gap) * 3);
-}
-
-.button.user {
-  background-color: inherit;
-  color: var(--color-black);
-  width: calc(var(--gap) * 3);
-  height: calc(var(--gap) * 3);
-}
-
-.button.burger {
-  background-color: inherit;
-  color: var(--color-black);
-  width: calc(var(--gap) * 3);
-  height: calc(var(--gap) * 3);
 }
