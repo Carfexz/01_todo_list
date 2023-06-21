@@ -1,5 +1,5 @@
+import Button from "../../ui/Button/Button";
 import { motion } from "framer-motion";
-import { GrClose } from "react-icons/gr";
 import './PostItem.css'
 
 const PostItem = ({ remove, post, number }) => {
@@ -12,13 +12,14 @@ const PostItem = ({ remove, post, number }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}>
             <div className='post'>
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
                     className='gr-close'>
-                    <GrClose
-                        onClick={removeHandler} />
+                    <Button isEdit={true} editIcon={true} />
+                    <Button isCross={true} crossIcon={true} onClick={removeHandler} />
                 </motion.div>
                 <div className='post-content'>
                     <strong>{number}. {title}</strong>

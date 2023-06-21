@@ -8,24 +8,3 @@
   height: calc(var(--gap) * 10);
   bottom: 0;
 }
-
-.circle-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 40px;
-  height: 40px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-
-  font-family: "Poppins";
-  font-weight: 100;
-  font-size: 20px;
-  color: var(--color-white);
-
-  background: var(--color-green);
-  border: var(--color-border);
-  box-shadow: var(--color-light-grey1);
-}

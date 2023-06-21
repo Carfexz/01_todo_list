@@ -1,13 +1,11 @@
 import './Header.css'
-import { TfiAlignRight } from "react-icons/tfi";
-import { TfiClose } from "react-icons/tfi";
-import { TfiUser } from "react-icons/tfi";
+import Button from '../../ui/Button/Button';
 
 const Header = () => {
     return (
         <div className="main-header">
-            <div><TfiUser /></div>
-            <div><TfiAlignRight /></div>
+            <Button isUser={true} userIcon={true} />
+            <Button isBurger={true} burgerIcon={true} />
         </div>
     )
 }
