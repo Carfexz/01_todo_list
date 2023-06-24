@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import './PostItem.css'
 import { animationAscent } from "../../../const/animations/items";
 
-const PostItem = ({ remove, post, number }) => {
+const PostItem = ({ remove, post, number, openModal }) => {
     const { title, body } = post;
     const removeHandler = () => remove(post);
+    const editHandler = () => openModal();
 
     return (
         <motion.div
@@ -16,7 +17,7 @@ const PostItem = ({ remove, post, number }) => {
                 {...animationAscent}
                 className='gr-close'
             >
-                <Button isEdit={true} editIcon={true} />
+                <Button isEdit={true} editIcon={true} onClick={editHandler} />
                 <Button isCross={true} crossIcon={true} onClick={removeHandler} />
             </motion.div>
             <div className='post-content'>

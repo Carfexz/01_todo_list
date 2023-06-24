@@ -1,7 +1,7 @@
 import LoginWindow from '../../entites/LoginWindow/LoginWindow';
 import Title from '../../entites/Title/Title'
 import Container from '../../entites/Container/Container';
-import Modal from '../../entites/Modal/Modal';
+import Modal from '../../entites/Modal/Modal/Modal';
 import Button from '../../ui/Button/Button';
 import Input from '../../ui/Input/Input';
 import { useInput } from '../../ui/Input/useInput';

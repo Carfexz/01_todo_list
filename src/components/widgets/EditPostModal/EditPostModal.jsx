@@ -4,15 +4,15 @@ import Modal from "../../entites/Modal/Modal/Modal"
 import Button from "../../ui/Button/Button"
 import Input from "../../ui/Input/Input"
 import { useInput } from "../../ui/Input/useInput"
-import './CreatePostModal.css'
+import './EditPostModal.css'
 
-const CreatePostModal = ({ closeModal, addNewPost }) => {
+const EditPostModal = ({ closeModal, editPost }) => {
 
-    const title = useInput(['', ''])
-    const body = useInput(['', ''])
+    const titleEdit = useInput(['', ''])
+    const bodyEdit = useInput(['', ''])
 
-    const addPostHandler = () => {
-        addNewPost({ title: title.value, body: body.value })
+    const editPostHandler = () => {
+        editPost({ title: titleEdit.value, body: bodyEdit.value })
         closeModal()
     }
 
@@ -23,21 +23,21 @@ const CreatePostModal = ({ closeModal, addNewPost }) => {
                     <Container>
                         <Input
                             placeholder='Post title'
-                            {...title}
+                            {...titleEdit}
                         />
                     </Container>
                     <Container>
                         <Input
                             placeholder='Post desciption'
-                            {...body}
+                            {...bodyEdit}
                         />
                     </Container>
                     <div className="padding-button-modal" />
-                    <Button text='Create post' onClick={addPostHandler} />
+                    <Button text='Edit post' onClick={editPostHandler} />
                 </div>
             </Modal>
         </Backdrop >
     )
 }
 
-export default CreatePostModal
+export default EditPostModal

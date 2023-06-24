@@ -2,12 +2,12 @@ import PostItem from '../../entites/PostItem/PostItem'
 import Title from '../../entites/Title/Title';
 import './PostList.css'
 
-const PostList = ({ posts, title, remove }) => {
+const PostList = ({ posts, title, remove, openModal }) => {
     return (
         <div>
             <Title text={title} />
             {posts.map((post, index) =>
-                <PostItem remove={remove} number={index + 1} post={post} key={post.id} />
+                <PostItem openModal={openModal} remove={remove} number={index + 1} post={post} key={post.id} />
             )}
         </div>
     )

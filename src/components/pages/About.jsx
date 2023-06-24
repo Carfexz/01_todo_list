@@ -1,5 +1,5 @@
-import Backdrop from "../entites/Backdrop/Backdrop";
-import Modal from "../entites/Modal/Modal";
+import Backdrop from "../entites/Modal/Backdrop/Backdrop";
+import Modal from "../entites/Modal/Modal/Modal";
 import Title from "../entites/Title/Title";
 import { motion } from "framer-motion";
 import { animationAscent } from "../../const/animations/items";

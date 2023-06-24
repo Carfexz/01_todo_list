@@ -1,5 +1,5 @@
 import { GrClose } from "react-icons/gr";
-import { stopPropagation } from "../../../utils";
+import { stopPropagation } from "../../../../utils";
 import './Modal.css'
 
 

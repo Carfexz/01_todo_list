@@ -1,8 +1,10 @@
 import Layout from "./Layout/Layout";
 import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
+import EditPostModal from "../widgets/EditPostModal/EditPostModal";
 import PostList from "../features/PostList/PostList";
 import Title from '../entites/Title/Title'
 import { useState } from "react";
+import { useModal } from "../entites/Modal/hooks/useModal";
 import { motion } from "framer-motion";
 import { animationAscent } from "../../const/animations/items";
 
@@ -18,30 +20,40 @@ const Posts = () => {
         const newPost = {
             id: Date.now(),
             title,
-            body
+            body,
         }
         setPosts([...posts, newPost])
+    }
+
+    const editPost = () => {
+        console.log(123);
     }
 
     const removePost = ({ id }) => {
         setPosts([...posts].filter(p => p.id !== id))
     }
 
-    const [showModal, setShowModal] = useState(false)
 
-    const closeModal = () => {
-        setShowModal(false)
-    }
 
-    const openModal = () => {
-        setShowModal(true)
-    }
+    // const [showModal, setShowModal] = useState(false)
+
+    // const closeModal = () => {
+    //     setShowModal(false)
+    // }
+
+    // const openModal = () => {
+    //     setShowModal(true)
+    // }
+
+    const createModal = useModal(false)
+    const editModal = useModal(false)
 
     return (
-        <Layout isFooter={true} isHeader={true} openModal={openModal}>
-            {showModal && <CreatePostModal addNewPost={addNewPost} closeModal={closeModal} />}
+        <Layout isFooter={true} isHeader={true} openModal={createModal.openModal}>
+            {createModal.isShow && <CreatePostModal addNewPost={addNewPost} closeModal={createModal.closeModal} />}
+            {editModal.isShow && <EditPostModal editPost={editPost} closeModal={editModal.closeModal} />}
             {posts.length !== 0
-                ? <PostList remove={removePost} posts={posts} title='TO-DO LIST' />
+                ? <PostList editPost={editPost} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >

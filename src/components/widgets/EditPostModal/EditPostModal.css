@@ -1,0 +1,7 @@
+.modal-content {
+  padding-top: calc(var(--gap) * 3);
+}
+
+.padding-button-modal {
+  padding: calc(var(--gap) * 3);
+}
