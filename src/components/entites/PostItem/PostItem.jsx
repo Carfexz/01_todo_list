@@ -13,14 +13,16 @@ const PostItem = ({ remove, post, number, editModal }) => {
             {...animationAscent}
             className='post'
         >
-            <motion.div
-                {...animationAscent}
-                className='gr-close'
-            >
-                <Button isEdit={true} editIcon={true} onClick={editHandler} />
-                <Button isCross={true} crossIcon={true} onClick={removeHandler} />
-            </motion.div>
+
             <div className='post-content'>
+                <motion.div
+                    {...animationAscent}
+                    className='gr-close'
+                >
+                    <Button isComplete={true} completeIcon={true} onClick={() => { console.log('Complete'); }} />
+                    <Button isEdit={true} editIcon={true} onClick={editHandler} />
+                    <Button isCross={true} crossIcon={true} onClick={removeHandler} />
+                </motion.div>
                 <strong>{number}. {title}</strong>
                 <div>
                     {body}

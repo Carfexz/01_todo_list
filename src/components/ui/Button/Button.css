@@ -31,6 +31,9 @@
 }
 
 .button.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: inherit;
   font-size: calc(var(--gap) * 4);
   color: var(--color-black);

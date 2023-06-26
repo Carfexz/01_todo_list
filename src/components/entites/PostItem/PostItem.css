@@ -13,7 +13,7 @@
 .post-content {
   display: flex;
   flex-direction: column;
-  padding: calc(var(--gap) * 3);
+  padding: calc(var(--gap) * 4);
   width: 100%;
 
   background: var(--color-bg-post);
@@ -23,7 +23,5 @@
 
 .gr-close {
   display: flex;
-  justify-content: flex-end;
-  padding-bottom: calc(var(--gap) * 2);
-  padding-right: calc(var(--gap) * 3);
+  justify-content: space-around;
 }

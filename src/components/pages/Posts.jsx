@@ -11,17 +11,20 @@ import { animationAscent } from "../../const/animations/items";
 const Posts = () => {
 
     const [posts, setPosts] = useState([
-        { id: 1, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days' },
-        { id: 2, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days' },
-        { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days' }
+        { id: 1, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
+        { id: 2, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
+        { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false }
     ])
 
-    const addNewPost = ({ title, body }) => {
+    const addNewPost = ({ title, body, isComplete }) => {
         const newPost = {
             id: Date.now(),
             title,
             body,
+            isComplete,
+         
         }
+        console.log(newPost);
         setPosts([...posts, newPost])
     }
 
