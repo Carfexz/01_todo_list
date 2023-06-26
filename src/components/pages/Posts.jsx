@@ -16,13 +16,11 @@ const Posts = () => {
         { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false }
     ])
 
-    const addNewPost = ({ title, body, isComplete }) => {
+    const addNewPost = ({ title, body }) => {
         const newPost = {
             id: Date.now(),
             title,
             body,
-            isComplete,
-         
         }
         console.log(newPost);
         setPosts([...posts, newPost])
@@ -36,17 +34,14 @@ const Posts = () => {
         setPosts([...posts].filter(p => p.id !== id))
     }
 
-
-
-    // const [showModal, setShowModal] = useState(false)
-
-    // const closeModal = () => {
-    //     setShowModal(false)
-    // }
-
-    // const openModal = () => {
-    //     setShowModal(true)
-    // }
+    const handleTogglePaid = ({ id }) => {
+        setPosts((prevState) => {
+            const index = prevState.findIndex((posts) => posts.id === id)
+            const oldPosts = prevState[index]
+            const newPosts = { ...oldPosts, isComplete: !oldPosts.isComplete };
+            return ([...prevState.slice(0, index), newPosts, ...prevState.slice(index + 1)])
+        })
+    }
 
     const createModal = useModal(false)
     const editModal = useModal(false)
@@ -56,7 +51,7 @@ const Posts = () => {
             {createModal.isShow && <CreatePostModal addNewPost={addNewPost} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={editPost} closeModal={editModal.closeModal} />}
             {posts.length !== 0
-                ? <PostList editModal={editModal.openModal} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
+                ? <PostList onComplete={handleTogglePaid} editModal={editModal.openModal} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >

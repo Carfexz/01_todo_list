@@ -9,7 +9,7 @@ import { buttonAnimations } from '../../../const/animations/items';
 import './Button.css'
 
 
-const Button = ({ text, onClick, isCircle, isCross, isEdit, isUser, isBurger, isComplete, crossIcon = false, editIcon = false, userIcon = false, burgerIcon = false, completeIcon = false }) => {
+const Button = ({ text, onClick, isCircle, isCross, isEdit, isUser, isBurger, isCompleteIcon, crossIcon = false, editIcon = false, userIcon = false, burgerIcon = false, completeIcon = false }) => {
     return (
         <motion.div
             {...buttonAnimations}
@@ -21,7 +21,7 @@ const Button = ({ text, onClick, isCircle, isCross, isEdit, isUser, isBurger, is
                  ${isEdit ? 'icon' : 'button'}
                  ${isUser ? 'icon' : 'button'}
                  ${isBurger ? 'icon' : 'button'}
-                 ${isComplete ? 'icon' : 'button'}`}
+                 ${isCompleteIcon ? 'icon' : 'button'}`}
             >
                 {text}
                 {crossIcon && <AiFillCloseCircle className='icon' />}

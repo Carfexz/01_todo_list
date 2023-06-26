@@ -21,6 +21,17 @@
   border-radius: calc(var(--gap) * 1);
 }
 
+.post-content.complete {
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--gap) * 4);
+  width: 100%;
+
+  background: var(--color-light-green);
+  border: var(--color-border-posts);
+  border-radius: calc(var(--gap) * 1);
+}
+
 .gr-close {
   display: flex;
   justify-content: space-around;

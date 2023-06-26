@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import './PostItem.css'
 import { animationAscent } from "../../../const/animations/items";
 
-const PostItem = ({ remove, post, number, editModal }) => {
-    const { title, body } = post;
+const PostItem = ({ remove, post, number, editModal, onComplete }) => {
+    const { id, title, body, isComplete } = post;
+    const completeHandler = () => onComplete(id)
     const removeHandler = () => remove(post);
     const editHandler = () => editModal();
 
@@ -14,12 +15,12 @@ const PostItem = ({ remove, post, number, editModal }) => {
             className='post'
         >
 
-            <div className='post-content'>
+            <div className={`post-content ${isComplete ? 'complete' : 'post-content'}`}>
                 <motion.div
                     {...animationAscent}
                     className='gr-close'
                 >
-                    <Button isComplete={true} completeIcon={true} onClick={() => { console.log('Complete'); }} />
+                    <Button isCompleteIcon={true} completeIcon={true} onClick={completeHandler} />
                     <Button isEdit={true} editIcon={true} onClick={editHandler} />
                     <Button isCross={true} crossIcon={true} onClick={removeHandler} />
                 </motion.div>
