@@ -12,8 +12,7 @@ const EditPostModal = ({ closeModal, editPost }) => {
     const bodyEdit = useInput(['', ''])
 
     const editPostHandler = () => {
-        editPost({ title: titleEdit.value, body: bodyEdit.value })
-        closeModal()
+        console.log(123);
     }
 
     return (

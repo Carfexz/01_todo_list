@@ -26,7 +26,7 @@ const Posts = () => {
     }
 
     const editPost = () => {
-        console.log(123);
+        console.log('Работает!');
     }
 
     const removePost = ({ id }) => {
@@ -53,7 +53,7 @@ const Posts = () => {
             {createModal.isShow && <CreatePostModal addNewPost={addNewPost} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={editPost} closeModal={editModal.closeModal} />}
             {posts.length !== 0
-                ? <PostList editPost={editPost} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
+                ? <PostList editModal={editModal.openModal} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >
