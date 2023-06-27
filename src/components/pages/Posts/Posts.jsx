@@ -1,16 +1,16 @@
-import Layout from "./Layout/Layout";
-import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
-import EditPostModal from "../widgets/EditPostModal/EditPostModal";
-import PostList from "../features/PostList/PostList";
-import Title from '../entites/Title/Title'
+import Layout from "../Layout/Layout";
+import CreatePostModal from "../../widgets/CreatePostModal/CreatePostModal";
+import EditPostModal from "../../widgets/EditPostModal/EditPostModal";
+import PostList from "../../features/PostList/PostList";
+import Title from '../../entites/Title/Title'
 // import { useState } from "react";
-import { useModal } from "../entites/Modal/hooks/useModal";
-import { usePostSlice } from "./Posts/usePostSlice";
-import { animationAscent } from "../../const/animations/items";
+import { useModal } from "../../entites/Modal/hooks/useModal";
+import { usePostSlice } from "./usePostSlice";
+import { animationAscent } from "../../../const/animations/items";
 import { motion } from "framer-motion";
 
 const Posts = () => {
-    const { state, addPost } = usePostSlice()
+    const { state, addPost, delPost } = usePostSlice()
 
     // const [posts, setPosts] = useState([
     //     { id: 1, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
@@ -41,15 +41,23 @@ const Posts = () => {
     //     })
     // }
 
+    const addPostHandler = (payload) => {
+        addPost(payload)
+    }
+
+    const delPostHandler = (payload) => {
+        delPost(payload)
+    }
+
     const createModal = useModal(false)
     const editModal = useModal(false)
 
     return (
         <Layout isFooter={true} isHeader={true} openModal={createModal.openModal}>
-            {createModal.isShow && <CreatePostModal addNewPost={() => { }} closeModal={createModal.closeModal} />}
+            {createModal.isShow && <CreatePostModal addNewPost={addPostHandler} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={() => { }} closeModal={editModal.closeModal} />}
             {state.posts !== 0
-                ? <PostList onComplete={() => { }} editModal={editModal.openModal} openModal={createModal.openModal} remove={() => { }} posts={state.posts} title='TO-DO LIST' />
+                ? <PostList onComplete={() => { }} editModal={editModal.openModal} openModal={createModal.openModal} remove={delPostHandler} posts={state.posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >

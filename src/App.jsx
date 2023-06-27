@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import About from './components/pages/About'
 import Error from './components/pages/Error'
-import Posts from './components/pages/Posts'
+import Posts from './components/pages/Posts/Posts'
 import Layout from './components/helpers/Layout'
 import './styles/fonts.css'
 
