@@ -34,7 +34,7 @@ const Posts = () => {
         setPosts([...posts].filter(p => p.id !== id))
     }
 
-    const handleTogglePaid = ({ id }) => {
+    const handleTogglePaid = (id) => {
         setPosts((prevState) => {
             const index = prevState.findIndex((posts) => posts.id === id)
             const oldPosts = prevState[index]
