@@ -2,7 +2,7 @@ import PostItem from '../../entites/PostItem/PostItem'
 import Title from '../../entites/Title/Title';
 import './PostList.css'
 
-const PostList = ({ posts, title, remove, editModal, onComplete }) => {
+const PostList = ({ posts, title, remove, editModal, onComplete, task }) => {
     return (
         <div>
             <Title text={title} />

@@ -5,14 +5,15 @@ import Button from "../../ui/Button/Button"
 import Input from "../../ui/Input/Input"
 import { useInput } from "../../ui/Input/useInput"
 import './EditPostModal.css'
+import { useState } from "react"
 
 const EditPostModal = ({ closeModal, editPost }) => {
 
     const titleEdit = useInput(['', ''])
     const bodyEdit = useInput(['', ''])
 
-    const editPostHandler = () => {
-        console.log(123);
+    const editPostHandler = (id) => {
+
     }
 
     return (

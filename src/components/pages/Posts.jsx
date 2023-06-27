@@ -3,55 +3,53 @@ import CreatePostModal from "../widgets/CreatePostModal/CreatePostModal";
 import EditPostModal from "../widgets/EditPostModal/EditPostModal";
 import PostList from "../features/PostList/PostList";
 import Title from '../entites/Title/Title'
-import { useState } from "react";
+// import { useState } from "react";
 import { useModal } from "../entites/Modal/hooks/useModal";
-import { motion } from "framer-motion";
+import { usePostSlice } from "./Posts/usePostSlice";
 import { animationAscent } from "../../const/animations/items";
+import { motion } from "framer-motion";
 
 const Posts = () => {
+    const { state, addPost } = usePostSlice()
 
-    const [posts, setPosts] = useState([
-        { id: 1, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
-        { id: 2, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
-        { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false }
-    ])
+    // const [posts, setPosts] = useState([
+    //     { id: 1, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
+    //     { id: 2, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false },
+    //     { id: 3, title: 'Get up at 6:30', body: 'Marathon training, 1/30 days', isComplete: false }
+    // ])
 
-    const addNewPost = ({ title, body }) => {
-        const newPost = {
-            id: Date.now(),
-            title,
-            body,
-        }
-        console.log(newPost);
-        setPosts([...posts, newPost])
-    }
+    // const addNewPost = ({ title, body }) => {
+    //     const newPost = {
+    //         id: Date.now(),
+    //         title,
+    //         body,
+    //     }
+    //     console.log(newPost);
+    //     setPosts([...posts, newPost])
+    // }
 
-    const editPost = () => {
-        console.log('Работает!');
-    }
+    // const removePost = ({ id }) => {
+    //     setPosts([...posts].filter(p => p.id !== id))
+    // }
 
-    const removePost = ({ id }) => {
-        setPosts([...posts].filter(p => p.id !== id))
-    }
-
-    const handleTogglePaid = (id) => {
-        setPosts((prevState) => {
-            const index = prevState.findIndex((posts) => posts.id === id)
-            const oldPosts = prevState[index]
-            const newPosts = { ...oldPosts, isComplete: !oldPosts.isComplete };
-            return ([...prevState.slice(0, index), newPosts, ...prevState.slice(index + 1)])
-        })
-    }
+    // const handleTogglePaid = (id) => {
+    //     setPosts((prevState) => {
+    //         const index = prevState.findIndex((posts) => posts.id === id)
+    //         const oldPosts = prevState[index]
+    //         const newPosts = { ...oldPosts, isComplete: !oldPosts.isComplete };
+    //         return ([...prevState.slice(0, index), newPosts, ...prevState.slice(index + 1)])
+    //     })
+    // }
 
     const createModal = useModal(false)
     const editModal = useModal(false)
 
     return (
         <Layout isFooter={true} isHeader={true} openModal={createModal.openModal}>
-            {createModal.isShow && <CreatePostModal addNewPost={addNewPost} closeModal={createModal.closeModal} />}
-            {editModal.isShow && <EditPostModal editPost={editPost} closeModal={editModal.closeModal} />}
-            {posts.length !== 0
-                ? <PostList onComplete={handleTogglePaid} editModal={editModal.openModal} openModal={createModal.openModal} remove={removePost} posts={posts} title='TO-DO LIST' />
+            {createModal.isShow && <CreatePostModal addNewPost={() => { }} closeModal={createModal.closeModal} />}
+            {editModal.isShow && <EditPostModal editPost={() => { }} closeModal={editModal.closeModal} />}
+            {state.posts !== 0
+                ? <PostList onComplete={() => { }} editModal={editModal.openModal} openModal={createModal.openModal} remove={() => { }} posts={state.posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >
@@ -63,3 +61,4 @@ const Posts = () => {
 }
 
 export default Posts;
+

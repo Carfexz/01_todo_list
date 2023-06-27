@@ -7,7 +7,7 @@ const PostItem = ({ remove, post, number, editModal, onComplete }) => {
     const { id, title, body, isComplete } = post;
     const completeHandler = () => onComplete(id)
     const removeHandler = () => remove(post);
-    const editHandler = () => editModal();
+    const editHandler = () => editModal(id);
 
     return (
         <motion.div
