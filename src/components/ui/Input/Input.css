@@ -9,6 +9,8 @@
   background-color: inherit;
   border: none;
   outline: none;
-  font-size: var(--font-size-normal);
   color: var(--color-white);
+  font-size: var(--font-size-normal);
+  font-family: "Poppins";
+  font-weight: normal;
 }

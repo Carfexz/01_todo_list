@@ -7,6 +7,10 @@
   border: var(--color-border-button);
   box-shadow: var(--color-light-grey1);
   border-radius: calc(var(--gap) * 10);
+  color: var(--color-white);
+  font-family: "Poppins";
+  font-weight: 100;
+  font-size: calc(var(--gap) * 4);
 }
 
 .button.circle {
@@ -14,15 +18,15 @@
   justify-content: center;
   align-items: center;
 
-  width: 40px;
-  height: 40px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
+  width: calc(var(--gap) * 8);
+  height: calc(var(--gap) * 8);
+  -moz-border-radius: calc(var(--gap) * 10);
+  -webkit-border-radius: calc(var(--gap) * 10);
+  border-radius: calc(var(--gap) * 10);
 
   font-family: "Poppins";
-  font-weight: 100;
-  font-size: 20px;
+  font-weight: calc(var(--gap) * 20);
+  font-size: calc(var(--gap) * 4);
   color: var(--color-white);
 
   background: var(--color-green);
