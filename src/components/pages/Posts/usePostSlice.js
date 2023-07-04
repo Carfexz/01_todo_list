@@ -44,10 +44,8 @@ const postReducer = (state, action) => {
                 ...stateCopy,
                 posts: [...stateCopy.posts, newPost]
             }
-            break;
         case actionTypes.EDIT_POST:
             return state;
-            break;
         case actionTypes.DEL_POST:
 
             const err = [...stateCopy.posts].filter(posts => posts.id !== id)
@@ -56,21 +54,17 @@ const postReducer = (state, action) => {
                 ...stateCopy,
                 posts: err
             };
-            break;
         case actionTypes.CHANGE_POST_IS_COMPLETE:
 
-            const setActionPosts = (prevState) => {
-                const index = prevState.findIndex((posts) => posts.id === id)
-                const oldPosts = prevState[index]
-                const newPosts = { ...oldPosts, isComplete: !oldPosts.isComplete };
-                return ([...prevState.slice(0, index), newPosts, ...prevState.slice(index + 1)])
-            }
+            const index = stateCopy.posts.findIndex((posts) => posts.id === id)
+            if (index === -1) return stateCopy
+
+            const foundTodo = stateCopy.posts[index]
+            stateCopy.posts[index] = { ...foundTodo, isComplete: !foundTodo.isComplete }
 
             return {
                 ...stateCopy,
-                posts: setActionPosts
-            };
-            break;
+            }
         default:
             return state;
             break;
