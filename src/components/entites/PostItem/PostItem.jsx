@@ -5,10 +5,11 @@ import { animationAscent } from "../../../const/animations/items";
 
 const PostItem = ({ remove, post, number, editModal, onComplete }) => {
     const { id, title, body, isComplete } = post;
-    const completeHandler = () => onComplete(id)
+    const completeHandler = () => {
+        onComplete(id)
+    }
     const removeHandler = () => {
         remove(id);
-        console.log(id);
     }
     const editHandler = () => editModal(id);
 

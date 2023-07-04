@@ -28,6 +28,7 @@ const editPostAction = {
 // ! Редьюсер
 const postReducer = (state, action) => {
     const stateCopy = JSON.parse(JSON.stringify(state))
+    const id = action.payload
 
     switch (action.type) {
         case actionTypes.ADD_POST:
@@ -48,7 +49,6 @@ const postReducer = (state, action) => {
             return state;
             break;
         case actionTypes.DEL_POST:
-            const id = action.payload
 
             const err = [...stateCopy.posts].filter(posts => posts.id !== id)
 
@@ -58,7 +58,18 @@ const postReducer = (state, action) => {
             };
             break;
         case actionTypes.CHANGE_POST_IS_COMPLETE:
-            return state;
+
+            const setActionPosts = (prevState) => {
+                const index = prevState.findIndex((posts) => posts.id === id)
+                const oldPosts = prevState[index]
+                const newPosts = { ...oldPosts, isComplete: !oldPosts.isComplete };
+                return ([...prevState.slice(0, index), newPosts, ...prevState.slice(index + 1)])
+            }
+
+            return {
+                ...stateCopy,
+                posts: setActionPosts
+            };
             break;
         default:
             return state;
@@ -109,8 +120,15 @@ export const usePostSlice = () => {
             return postReducer(prevState, delPostActionCreator(payload))
         })
     }
+
+    const completePost = (payload) => {
+        setState((prevState) => {
+            return postReducer(prevState, changePostIsCompleteActionCreator(payload))
+        })
+    }
     return {
         state,
+        completePost,
         delPost,
         addPost,
     }
