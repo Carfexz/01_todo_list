@@ -3,7 +3,7 @@ import Header from "../../widgets/Header/Header";
 
 import './Layout.css'
 
-const Layout = ({ children, isHeader = true, isFooter = true, openModal, openMenu }) => {
+const Layout = ({ children, isHeader = true, isFooter = true, openModal, openMenu, closeMenu }) => {
 
     return (
         <div className="layout">

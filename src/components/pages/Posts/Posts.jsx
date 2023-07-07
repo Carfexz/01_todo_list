@@ -30,8 +30,8 @@ const Posts = () => {
     const editModal = useModal(false)
 
     return (
-        <Layout isFooter={true} isHeader={true} openModal={createModal.openModal} openMenu={menuModal.openMenu} >
-            {menuModal.isShowMenu && <Menu />}
+        <Layout isFooter={true} isHeader={true} openModal={createModal.openModal} openMenu={menuModal.openMenu} closeModal={editModal.closeModal}>
+            {menuModal.isShowMenu && <Menu closeMenu={menuModal.closeMenu} />}
             {createModal.isShow && <CreatePostModal addNewPost={addPostHandler} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={() => { }} closeModal={editModal.closeModal} />}
             {state.posts != 0

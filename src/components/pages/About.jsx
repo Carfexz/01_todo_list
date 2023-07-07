@@ -5,9 +5,9 @@ import { animationAscent } from "../../const/animations/items";
 import Layout from "./Layout/Layout";
 import CenteringContainer from "../entites/CenteringContainer/CenteringContainer";
 
-const About = ({ openMenu }) => {
+const About = () => {
     return (
-        <Layout isFooter={false} isHeader={true} onClick={openMenu}>
+        <Layout isFooter={false} isHeader={true}>
             <CenteringContainer>
                 <motion.div className=""
                     {...animationAscent}

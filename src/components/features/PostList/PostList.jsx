@@ -3,8 +3,7 @@ import Title from '../../entites/Title/Title';
 import './PostList.css'
 
 const PostList = ({ posts, title, remove, editModal, onComplete }) => {
-    console.log(posts);
-    console.log(onComplete);
+
     return (
         <div>
             <Title text={title} />
