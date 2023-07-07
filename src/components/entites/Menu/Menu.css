@@ -1,0 +1,16 @@
+.padding {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5vh;
+}
+
+.menu {
+  padding: calc(var(--gap) * 4);
+  border-radius: calc(var(--gap) * 3);
+  background-color: var(--color-white);
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 100;
+}

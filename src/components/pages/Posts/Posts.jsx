@@ -3,15 +3,15 @@ import CreatePostModal from "../../widgets/CreatePostModal/CreatePostModal";
 import EditPostModal from "../../widgets/EditPostModal/EditPostModal";
 import PostList from "../../features/PostList/PostList";
 import Title from '../../entites/Title/Title'
-// import { useState } from "react";
+import Menu from '../../entites/Menu/Menu'
 import { useModal } from "../../entites/Modal/hooks/useModal";
+import { useMenu } from "../../entites/Menu/hooks/useMenu";
 import { usePostSlice } from "./usePostSlice";
 import { animationAscent } from "../../../const/animations/items";
 import { motion } from "framer-motion";
 
 const Posts = () => {
     const { state, addPost, delPost, completePost } = usePostSlice()
-
 
     const addPostHandler = (payload) => {
         addPost(payload)
@@ -25,14 +25,16 @@ const Posts = () => {
         completePost(payload)
     }
 
+    const menuModal = useMenu(false)
     const createModal = useModal(false)
     const editModal = useModal(false)
 
     return (
-        <Layout isFooter={true} isHeader={true} openModal={createModal.openModal}>
+        <Layout isFooter={true} isHeader={true} openModal={createModal.openModal} openMenu={menuModal.openMenu} >
+            {menuModal.isShowMenu && <Menu />}
             {createModal.isShow && <CreatePostModal addNewPost={addPostHandler} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={() => { }} closeModal={editModal.closeModal} />}
-            {state.posts !== 0
+            {state.posts != 0
                 ? <PostList onComplete={actionPostHandler} editModal={editModal.openModal} openModal={createModal.openModal} remove={delPostHandler} posts={state.posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}

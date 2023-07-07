@@ -1,5 +1,5 @@
 import Backdrop from "../../entites/Modal/Backdrop/Backdrop"
-import Container from '../../entites/Container/Container'
+import InputBackdrop from '../../entites/InputBackdrop/InputBackdrop'
 import Modal from "../../entites/Modal/Modal/Modal"
 import Button from "../../ui/Button/Button"
 import Input from "../../ui/Input/Input"
@@ -20,18 +20,18 @@ const CreatePostModal = ({ closeModal, addNewPost }) => {
         <Backdrop onClose={closeModal}>
             <Modal onClose={closeModal}>
                 <div className="modal-content">
-                    <Container>
+                    <InputBackdrop>
                         <Input
                             placeholder='Post title'
                             {...title}
                         />
-                    </Container>
-                    <Container>
+                    </InputBackdrop>
+                    <InputBackdrop>
                         <Input
                             placeholder='Post desciption'
                             {...body}
                         />
-                    </Container>
+                    </InputBackdrop>
                     <div className="padding-button-modal" />
                     <Button text='Create post' onClick={addPostHandler} />
                 </div>

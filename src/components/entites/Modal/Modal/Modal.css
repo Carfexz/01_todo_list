@@ -1,6 +1,7 @@
 .modal {
+  background-color: var(--color-white);
   padding: calc(var(--gap) * 4);
   border-radius: calc(var(--gap) * 3);
   background-color: var(--color-white);
-  width: 400px;
+  width: 50vh;
 }
