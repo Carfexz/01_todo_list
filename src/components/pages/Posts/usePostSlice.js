@@ -1,5 +1,5 @@
 import { useState } from "react"
-import PostItem from "../../entites/PostItem/PostItem"
+
 
 // ! Типы для экшенов
 const actionTypes = {
@@ -27,6 +27,7 @@ const editPostAction = {
 
 // ! Редьюсер
 const postReducer = (state, action) => {
+
     const stateCopy = JSON.parse(JSON.stringify(state))
     const id = action.payload
 
@@ -45,6 +46,7 @@ const postReducer = (state, action) => {
                 posts: [...stateCopy.posts, newPost]
             }
         case actionTypes.EDIT_POST:
+
             return state;
         case actionTypes.DEL_POST:
 
@@ -120,6 +122,7 @@ export const usePostSlice = () => {
             return postReducer(prevState, changePostIsCompleteActionCreator(payload))
         })
     }
+
     return {
         state,
         completePost,

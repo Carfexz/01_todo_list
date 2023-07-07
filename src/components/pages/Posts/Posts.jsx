@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 const Posts = () => {
     const { state, addPost, delPost, completePost } = usePostSlice()
 
+
     const addPostHandler = (payload) => {
         addPost(payload)
     }
