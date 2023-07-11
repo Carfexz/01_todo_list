@@ -1,7 +1,7 @@
 .main-header {
   display: flex;
   justify-content: space-between;
-  padding: 3vh 3vh 1vh 3vh;
+  padding: 4vh 4vh 1vh 4vh;
   width: 100%;
   font-family: "Poppins";
 }
