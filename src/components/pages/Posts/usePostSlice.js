@@ -27,7 +27,6 @@ const editPostAction = {
 
 // ! Редьюсер
 const postReducer = (state, action) => {
-
     const stateCopy = JSON.parse(JSON.stringify(state))
     const id = action.payload
 
@@ -47,7 +46,12 @@ const postReducer = (state, action) => {
             }
         case actionTypes.EDIT_POST:
 
-            return state;
+            const editPost = (id, updatedPosts) => setCurrent(curent.map((posts) => posts.id === id ? updatedPosts : current))
+
+            return {
+                ...stateCopy,
+                posts: [...stateCopy.posts, editPost]
+            };
         case actionTypes.DEL_POST:
 
             const err = [...stateCopy.posts].filter(posts => posts.id !== id)
@@ -123,11 +127,19 @@ export const usePostSlice = () => {
         })
     }
 
+    const editPost = (payload) => {
+        setState((prevState) => {
+            return postReducer(prevState, editPostActionCreator(payload))
+        })
+    }
+
     return {
         state,
         completePost,
         delPost,
         addPost,
+        editPost,
+        initialState,
     }
 }
 

@@ -5,15 +5,15 @@ import Button from "../../ui/Button/Button"
 import Input from "../../ui/Input/Input"
 import { useInput } from "../../ui/Input/useInput"
 import './EditPostModal.css'
-import { useState } from "react"
 
 const EditPostModal = ({ closeModal, editPost }) => {
 
-    const titleEdit = useInput(['', ''])
-    const bodyEdit = useInput(['', ''])
+    const title = useInput(['', ''])
+    const body = useInput(['', ''])
 
-    const editPostHandler = (id) => {
-
+    const editPostHandler = () => {
+        editPost()
+        closeModal()
     }
 
     return (
@@ -23,13 +23,13 @@ const EditPostModal = ({ closeModal, editPost }) => {
                     <InputBackdrop>
                         <Input
                             placeholder='Post title'
-                            {...titleEdit}
+                            {...title}
                         />
                     </InputBackdrop>
                     <InputBackdrop>
                         <Input
                             placeholder='Post desciption'
-                            {...bodyEdit}
+                            {...body}
                         />
                     </InputBackdrop>
                     <div className="padding-button-modal" />
