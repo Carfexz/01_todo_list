@@ -13,9 +13,9 @@ const actionTypes = {
 // ! Изначальное состояние 
 const initialState = {
     posts: [
-        { id: 1, title: 'Get up at 6:30 1', body: 'Marathon training, 1/30 days', isComplete: false },
-        { id: 2, title: 'Get up at 6:30 2', body: 'Marathon training, 1/30 days', isComplete: false },
-        { id: 3, title: 'Get up at 6:30 3', body: 'Marathon training, 1/30 days', isComplete: false },
+        { id: 1, title: 'Get up at 6:30 (5km)', body: 'Marathon training, 1/30 days', isComplete: false },
+        { id: 2, title: 'Get up at 6:30 (7km)', body: 'Marathon training, 2/30 days', isComplete: false },
+        { id: 3, title: 'Get up at 6:30 (10km)', body: 'Marathon training, 3/30 days', isComplete: false },
     ],
     currentPostId: null,
 }
