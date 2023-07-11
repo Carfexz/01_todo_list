@@ -31,7 +31,7 @@ const Posts = () => {
 
     return (
         <Layout isFooter={true} isHeader={true} openModal={createModal.openModal} openMenu={menuModal.openMenu} closeModal={editModal.closeModal}>
-            {menuModal.isShowMenu && <Menu closeMenu={menuModal.closeMenu} />}
+            {menuModal.isShowMenu && <Menu isPostsBtn={false} closeMenu={menuModal.closeMenu} />}
             {createModal.isShow && <CreatePostModal addNewPost={addPostHandler} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={() => { }} closeModal={editModal.closeModal} />}
             {state.posts != 0

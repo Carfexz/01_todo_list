@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-const Menu = ({ closeMenu }) => {
+const Menu = ({ closeMenu, isAboutBtn = true, isPostsBtn = true }) => {
     const navigate = useNavigate()
     return (
         <motion.div
@@ -16,11 +16,10 @@ const Menu = ({ closeMenu }) => {
                 <div className='padding'>
                     <Modal className='menu' isGrClose={false}>
                         <Link to="./about">
-                            <Button onClick={() => { console.log('btn1'); }} text={'About'} />
+                            {isAboutBtn && <Button onClick={() => { console.log('btn1'); }} text={'About'} />}
                         </Link>
-                        <br />
                         <Link to="./posts">
-                            <Button onClick={() => navigate(-1)} text={'Posts'} />
+                            {isPostsBtn && <Button onClick={() => navigate(-1)} text={'Posts'} />}
                         </Link>
                     </Modal>
                 </div>

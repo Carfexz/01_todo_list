@@ -12,7 +12,7 @@ const About = () => {
     const menuModal = useMenu(false)
     return (
         <Layout isFooter={false} isHeader={true} openMenu={menuModal.openMenu}>
-            {menuModal.isShowMenu && <Menu closeMenu={menuModal.closeMenu} />}
+            {menuModal.isShowMenu && <Menu isAboutBtn={false} closeMenu={menuModal.closeMenu} />}
             <motion.div className=""
                 {...animationAscent}
             >
