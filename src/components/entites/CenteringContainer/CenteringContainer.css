@@ -1,6 +1,6 @@
 .CenteringContainer {
+  padding-top: 14vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20vh;
 }

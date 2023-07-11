@@ -1,7 +1,7 @@
 import './Header.css'
 import Button from '../../ui/Button/Button';
 
-const Header = ({ openMenu, closeMenu }) => {
+const Header = ({ openMenu }) => {
     return (
         <div className="main-header">
             <Button isUser={true} userIcon={false} />

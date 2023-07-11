@@ -1,26 +1,32 @@
+import Layout from "./Layout/Layout";
 import Modal from "../entites/Modal/Modal/Modal";
 import Title from "../entites/Title/Title";
-import { motion } from "framer-motion";
-import { animationAscent } from "../../const/animations/items";
-import Layout from "./Layout/Layout";
 import CenteringContainer from "../entites/CenteringContainer/CenteringContainer";
+import { useMenu } from "../entites/Menu/hooks/useMenu";
+import Menu from '../entites/Menu/Menu'
+import { animationAscent } from "../../const/animations/items";
+import { motion } from "framer-motion";
+
 
 const About = () => {
+    const menuModal = useMenu(false)
     return (
-        <Layout isFooter={false} isHeader={true}>
-            <CenteringContainer>
-                <motion.div className=""
-                    {...animationAscent}
-                >
+        <Layout isFooter={false} isHeader={true} openMenu={menuModal.openMenu}>
+            {menuModal.isShowMenu && <Menu closeMenu={menuModal.closeMenu} />}
+            <motion.div className=""
+                {...animationAscent}
+            >
+                <CenteringContainer>
                     <Modal isGrClose={false}>
                         <Title text='GitHub @Carfexz' />
                     </Modal>
-                    <br />
+                </CenteringContainer>
+                <CenteringContainer>
                     <Modal isGrClose={false}>
                         <Title text='React + JavaScript' />
                     </Modal>
-                </motion.div>
-            </CenteringContainer>
+                </CenteringContainer>
+            </motion.div>
         </Layout>
     )
 }
