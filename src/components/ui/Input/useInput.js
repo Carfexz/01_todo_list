@@ -5,11 +5,9 @@ export const useInput = ([initValue = '', textOnClick = 'Клик по input']) 
 
     const onChange = (event) => {
         setValue(event.target.value);
-        console.log(value);
     }
 
     const onClick = () => {
-        console.log(textOnClick);
     }
 
     return {

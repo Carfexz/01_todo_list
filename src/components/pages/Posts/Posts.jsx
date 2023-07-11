@@ -12,7 +12,7 @@ import { animationAscent } from "../../../const/animations/items";
 import { motion } from "framer-motion";
 
 const Posts = () => {
-    const { state, addPost, delPost, completePost, editPost } = usePostSlice()
+    const { state, addPost, delPost, completePost, editPost, changeCurrentPostId } = usePostSlice()
 
     const addPostHandler = (payload) => {
         addPost(payload)
@@ -30,6 +30,8 @@ const Posts = () => {
         editPost(payload)
     }
 
+
+
     const menuModal = useMenu(false)
     const createModal = useModal(false)
     const editModal = useModal(false)
@@ -40,7 +42,7 @@ const Posts = () => {
             {createModal.isShow && <CreatePostModal addNewPost={addPostHandler} closeModal={createModal.closeModal} />}
             {editModal.isShow && <EditPostModal editPost={editPostHandler} closeModal={editModal.closeModal} />}
             {state.posts != 0
-                ? <PostList onComplete={actionPostHandler} editModal={editModal.openModal} openModal={createModal.openModal} remove={delPostHandler} posts={state.posts} title='TO-DO LIST' />
+                ? <PostList changeCurrentPostId={changeCurrentPostId} onComplete={actionPostHandler} editModal={editModal.openModal} openModal={createModal.openModal} remove={delPostHandler} posts={state.posts} title='TO-DO LIST' />
                 : <motion.div
                     {...animationAscent}
                 >

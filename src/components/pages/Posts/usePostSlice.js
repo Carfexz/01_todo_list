@@ -7,6 +7,7 @@ const actionTypes = {
     EDIT_POST: 'EDIT_POST',
     DEL_POST: 'DEL_POST',
     CHANGE_POST_IS_COMPLETE: 'CHANGE_POST_IS_COMPLETE',
+    CHANGE_CURRENT_POST_ID: 'CHANGE_CURRENT_POST_ID'
 }
 
 // ! Изначальное состояние 
@@ -28,10 +29,9 @@ const editPostAction = {
 // ! Редьюсер
 const postReducer = (state, action) => {
     const stateCopy = JSON.parse(JSON.stringify(state))
-    const id = action.payload
 
     switch (action.type) {
-        case actionTypes.ADD_POST:
+        case actionTypes.ADD_POST: {
             const { title, body } = action.payload
 
             const newPost = {
@@ -44,36 +44,49 @@ const postReducer = (state, action) => {
                 ...stateCopy,
                 posts: [...stateCopy.posts, newPost]
             }
-        case actionTypes.EDIT_POST:
+        }
+        case actionTypes.CHANGE_CURRENT_POST_ID: {
 
-            const editPost = (id, updatedPosts) => setCurrent(curent.map((posts) => posts.id === id ? updatedPosts : current))
+        }
+            return {
+                ...stateCopy,
+                currentPostId: action.payload,
+            };
+        case actionTypes.EDIT_POST: {
+            const id = stateCopy.currentPostId
+            const { body, title } = action.payload
+
+            const index = stateCopy.posts.findIndex((posts) => posts.id === id)
+            if (index === -1) return stateCopy
+
+            const editTodo = stateCopy.posts[index]
+            stateCopy.posts[index] = { ...editTodo, body, title }
+        }
+            return {
+                ...stateCopy,
+            };
+        case actionTypes.DEL_POST: {
+            const id = action.payload
+            const posts = [...stateCopy.posts].filter(posts => posts.id !== id)
 
             return {
                 ...stateCopy,
-                posts: [...stateCopy.posts, editPost]
+                posts,
             };
-        case actionTypes.DEL_POST:
-
-            const err = [...stateCopy.posts].filter(posts => posts.id !== id)
-
-            return {
-                ...stateCopy,
-                posts: err
-            };
-        case actionTypes.CHANGE_POST_IS_COMPLETE:
-
+        }
+        case actionTypes.CHANGE_POST_IS_COMPLETE: {
+            const id = action.payload
             const index = stateCopy.posts.findIndex((posts) => posts.id === id)
             if (index === -1) return stateCopy
 
             const foundTodo = stateCopy.posts[index]
             stateCopy.posts[index] = { ...foundTodo, isComplete: !foundTodo.isComplete }
-
             return {
                 ...stateCopy,
             }
+        }
         default:
             return state;
-            break;
     }
 }
 
@@ -106,6 +119,13 @@ export const changePostIsCompleteActionCreator = (payload) => {
     }
 }
 
+export const changeCurrentPostActionCreatorId = (payload) => {
+    return {
+        type: actionTypes.CHANGE_CURRENT_POST_ID,
+        payload: payload,
+    }
+}
+
 export const usePostSlice = () => {
     const [state, setState] = useState(initialState)
 
@@ -133,13 +153,19 @@ export const usePostSlice = () => {
         })
     }
 
+    const changeCurrentPostId = (payload) => {
+        setState((prevState) => {
+            return postReducer(prevState, changeCurrentPostActionCreatorId(payload))
+        })
+    }
+
     return {
         state,
         completePost,
         delPost,
         addPost,
         editPost,
-        initialState,
+        changeCurrentPostId,
     }
 }
 

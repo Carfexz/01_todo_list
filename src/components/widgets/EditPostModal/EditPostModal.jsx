@@ -12,7 +12,7 @@ const EditPostModal = ({ closeModal, editPost }) => {
     const body = useInput(['', ''])
 
     const editPostHandler = () => {
-        editPost()
+        editPost({ title: title.value, body: body.value })
         closeModal()
     }
 
